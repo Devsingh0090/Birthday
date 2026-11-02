@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Happy Birthday Ananta Priya! 🌸🎂✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-pink-theme">
+
+  <!-- Canvas for Falling Petals, Confetti & Sparkles -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Interactive Floating Balloons (only on main content) -->
+  <div id="balloon-container"></div>
+
+  <!-- Top Floating Navigation (Music Only) -->
+  <header class="top-nav-bar" id="top-nav" style="display:none;">
+    <div class="brand-pill">
+      <span>💖</span>
+      <span>Ananta Priya's Day</span>
+    </div>
+    <button class="audio-control" id="music-toggle" title="Play/Pause Birthday Music" aria-label="Toggle Music">
+      <i class="fa-solid fa-music music-icon" id="music-icon"></i>
+      <span id="music-status">Music 🎵</span>
+    </button>
+  </header>
+
+  <!-- ============================================================
+       1ST PAGE — EXACT MATCH TO REFERENCE PHOTO
+       Full-screen pink bg with the banner image + glass card overlay
+       ============================================================ -->
+  <div id="welcome-screen" class="welcome-screen">
+
+    <!-- The full-screen pink background using the user's reference image -->
+    <div class="ws-bg-image"></div>
+
+    <!-- Fairy lights string at very top -->
+    <div class="ws-lights-bar">
+      <div class="ws-lights-wire"></div>
+      <div class="ws-lights-row">
+        <span class="wl wl-y"></span>
+        <span class="wl wl-g"></span>
+        <span class="wl wl-p"></span>
+        <span class="wl wl-y"></span>
+        <span class="wl wl-g"></span>
+        <span class="wl wl-p"></span>
+        <span class="wl wl-y"></span>
+        <span class="wl wl-g"></span>
+        <span class="wl wl-p"></span>
+        <span class="wl wl-y"></span>
+        <span class="wl wl-g"></span>
+        <span class="wl wl-p"></span>
+        <span class="wl wl-y"></span>
+        <span class="wl wl-g"></span>
+      </div>
+    </div>
+
+    <!-- The Central White Frosted Glass Card -->
+    <div class="ws-card">
+
+      <!-- Top: Gift Box with golden bow + sparkle rays -->
+      <div class="ws-gift-wrap">
+        <div class="ws-rays">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="ws-gift-box">
+          <div class="ws-gift-ribbon-v"></div>
+          <div class="ws-gift-bow-left"></div>
+          <div class="ws-gift-bow-right"></div>
+          <div class="ws-gift-lid"></div>
+          <div class="ws-gift-body">
+            <div class="ws-gift-ribbon-h"></div>
+          </div>
+        </div>
+        <span class="ws-sparkle s1">✦</span>
+        <span class="ws-sparkle s2">✦</span>
+        <span class="ws-sparkle s3">✦</span>
+      </div>
+
+      <!-- Ribbon banner: ♥ A Special Birthday Surprise ♥ -->
+      <div class="ws-ribbon-banner">
+        <div class="ws-ribbon-tail ws-ribbon-tail-l"></div>
+        <div class="ws-ribbon-center">
+          <i class="fa-solid fa-heart ws-rh"></i>
+          <span>A Special Birthday Surprise</span>
+          <i class="fa-solid fa-heart ws-rh"></i>
+        </div>
+        <div class="ws-ribbon-tail ws-ribbon-tail-r"></div>
+      </div>
+
+      <!-- "For Dearest" in bold serif -->
+      <p class="ws-serif-title">For Dearest</p>
+
+      <!-- Cursive name in deep rose -->
+      <h1 class="ws-script-name">Ananta Priya</h1>
+
+      <!-- Divider ─── ♡ ─── -->
+      <div class="ws-divider">
+        <span class="ws-div-line"></span>
+        <span class="ws-div-heart">♡</span>
+        <span class="ws-div-line"></span>
+      </div>
+
+      <!-- Description text -->
+      <p class="ws-desc">
+        A little birthday surprise filled with love,<br>
+        beautiful memories, and heartfelt wishes<br>
+        just for you! 💝
+      </p>
+
+      <!-- Pink Action Button -->
+      <button id="start-btn" class="ws-open-btn" aria-label="Open Birthday Surprise">
+        <span>Tap to Open Surprise</span>
+        <span class="ws-btn-gift">🎁</span>
+        <i class="fa-solid fa-chevron-right ws-btn-arrow"></i>
+      </button>
+
+    </div><!-- end .ws-card -->
+  </div><!-- end #welcome-screen -->
+
+  <!-- ============================================================
+       MAIN SURPRISE EXPERIENCE
+       ============================================================ -->
+  <main class="main-wrapper" id="main-content">
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="glass-panel glass-hero">
+        <div class="crown-badge">
+          <i class="fa-solid fa-crown"></i> The Queen of the Day
+        </div>
+        <h1 class="hero-title">Happy Birthday!</h1>
+        <h2 class="name-title">Ananta Priya 🌸</h2>
+        <p class="hero-quote">
+          "May your special day be filled with boundless sunshine, sweet smiles, radiant health, and endless love. You bring so much grace, warmth, and joy to all of us!"
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-box glass-panel-sm">
+            <span class="stat-number">365</span>
+            <span class="stat-label">Days of Smiles</span>
+          </div>
+          <div class="stat-box glass-panel-sm">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Love & Respect</span>
+          </div>
+          <div class="stat-box glass-panel-sm">
+            <span class="stat-number" id="opened-counter">0 / 8</span>
+            <span class="stat-label">Gifts Opened</span>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <button class="pink-glow-btn sm" onclick="triggerGrandCelebration()">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Blast Confetti! 🎉
+          </button>
+          <a href="#gifts-section" class="pink-outline-btn sm">
+            <i class="fa-solid fa-box-open"></i> Open Gifts 🎁
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cake & Candle Section -->
+    <section class="section-container">
+      <div class="glass-panel cake-section">
+        <div class="section-header center">
+          <span class="section-tag">Make A Wish ✨</span>
+          <h2 class="section-title">Cut The Birthday Cake</h2>
+          <p class="section-subtitle">Tap the candle's flame to blow it out and make your secret birthday wish!</p>
+        </div>
+        <div class="cake-container">
+          <div class="cake">
+            <!-- Stand & Platter -->
+            <div class="cake-stand"></div>
+            <div class="plate"></div>
+
+            <!-- Tier 1: Bottom Strawberry Sponge Tier -->
+            <div class="layer layer-bottom">
+              <div class="frosting-glaze">
+                <span class="drip d1"></span>
+                <span class="drip d2"></span>
+                <span class="drip d3"></span>
+                <span class="drip d4"></span>
+                <span class="drip d5"></span>
+                <span class="drip d6"></span>
+              </div>
+              <div class="cream-pearls bottom-pearls">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="cake-sparkles">
+                <span>✨</span><span>🌸</span><span>✨</span>
+              </div>
+            </div>
+
+            <!-- Tier 2: Top Cream Tier -->
+            <div class="layer layer-top">
+              <div class="frosting-glaze top-glaze">
+                <span class="drip d1"></span>
+                <span class="drip d2"></span>
+                <span class="drip d3"></span>
+                <span class="drip d4"></span>
+              </div>
+              <div class="cream-pearls top-pearls">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="cherries-row">
+                <span class="fruit">🍓</span>
+                <span class="fruit main-cherry">🍒</span>
+                <span class="fruit">🍓</span>
+              </div>
+            </div>
+
+            <!-- Glowing Birthday Candle -->
+            <div class="candle" id="birthday-candle" title="Tap flame to blow out!">
+              <div class="candle-halo"></div>
+              <div class="flame" id="candle-flame"></div>
+              <div class="smoke" id="candle-smoke"></div>
+            </div>
+          </div>
+        </div>
+        <p class="candle-hint" id="candle-message">
+          <i class="fa-regular fa-hand-pointer"></i> Tap the glowing flame to blow out the candle!
+        </p>
+      </div>
+    </section>
+
+    <!-- Mystery Gift Boxes Section -->
+    <section class="section-container" id="gifts-section">
+      <div class="section-header center">
+        <span class="section-tag">Exclusive For You 🎀</span>
+        <h2 class="section-title">Mystery Gift Boxes 🎁</h2>
+        <p class="section-subtitle">Inside each gift box lies a special heartfelt wish and blessing. Tap each box to unwrap them all!</p>
+      </div>
+      <div class="gifts-grid" id="gifts-grid"></div>
+    </section>
+
+    <!-- Magic Wish Generator -->
+    <section class="section-container">
+      <div class="glass-panel wish-box">
+        <div class="section-header center">
+          <span class="section-tag">Infinite Blessings ✨</span>
+          <h2 class="section-title">Magic Wish Generator</h2>
+          <p class="section-subtitle">Tap the glowing rose crystal anytime to reveal a brand-new heartfelt wish!</p>
+        </div>
+        <div class="sphere-wrap">
+          <div class="crystal-ball" id="crystal-ball" onclick="generateRandomWish()">
+            <i class="fa-solid fa-gem sphere-icon"></i>
+            <span class="sphere-text">Tap For Wish</span>
+          </div>
+        </div>
+        <div class="wish-card glass-panel-sm" id="wish-display">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p id="wish-text">"Tap the glowing crystal to receive a magical birthday wish!"</p>
+          <span class="wish-author">— With warm love & respect ❤️</span>
+        </div>
+        <button class="pink-glow-btn sm center-btn" onclick="generateRandomWish()">
+          <i class="fa-solid fa-arrows-rotate"></i> Show Another Wish!
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="glass-panel footer-card">
+        <div class="heart-pulse-icon"><i class="fa-solid fa-heart"></i></div>
+        <h2>Happy Birthday Once Again!</h2>
+        <p class="footer-text">Dear Ananta Priya, may this year bless you with good health, sweet memories, and endless joy!</p>
+        <div class="footer-actions">
+          <button class="pink-glow-btn sm" onclick="triggerGrandCelebration()">
+            <i class="fa-solid fa-cake-candles"></i> One More Celebration Blast! 🎊
+          </button>
+        </div>
+        <div class="signature">Crafted with pure ❤️ and warmest blessings for Ananta Priya's Special Day!</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Gift Reveal Modal -->
+  <div class="modal-overlay" id="gift-modal">
+    <div class="modal-card">
+      <button class="close-modal-btn" id="close-modal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-gift-icon" id="modal-icon">🎁</div>
+      <span class="modal-badge" id="modal-tag">Special Surprise</span>
+      <h3 class="modal-title" id="modal-title">Gift Unwrapped!</h3>
+      <div class="modal-msg-box glass-panel-sm">
+        <p class="modal-msg" id="modal-message">Your custom wish will appear here.</p>
+      </div>
+      <div class="modal-voucher" id="modal-voucher"></div>
+      <button class="pink-glow-btn sm modal-action-btn" id="modal-next-btn">
+        Sweet! Let's Open More 🎀
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
